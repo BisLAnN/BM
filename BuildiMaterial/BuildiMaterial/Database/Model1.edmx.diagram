@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1372e86742ba4797ae32b4f10adec037" Name="Diagram1">
+        <EntityTypeShape EntityType="BuildMateria1Model.Category" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.City" Width="1.5" PointX="1.5" PointY="32.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Client" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Image" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Manufacturer" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Order" Width="1.5" PointX="3" PointY="17.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.OrderContent" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.OrderStatus" Width="1.5" PointX="0.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.PickupPoint" Width="1.5" PointX="0.75" PointY="29.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Role" Width="1.5" PointX="1.5" PointY="25.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Supplier" Width="1.5" PointX="0.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.Unit" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BuildMateria1Model.User" Width="1.5" PointX="1.5" PointY="22.25" IsExpanded="true" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Product__Categor__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__PickupPoi__CityI__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Client__UserID__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Order__ClientID__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Product__Image__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Product__Manufac__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Order__OrderStat__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Order__PickupPoi__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__OrderCont__Oredr__5AEE82B9" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__OrderCont__Produ__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Product__Supplie__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__Product__UnitID__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="BuildMateria1Model.FK__User__UserRoleID__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
