@@ -37,7 +37,7 @@ namespace BuildiMaterial.ViewModel
         {
             using (var db = new BuildMateria1Entities())
             {
-                var result = db.Product.Include("Supplier").Include("Unit").Include("Category").ToList();
+                var result = db.Product.Include("Supplier").Include("Unit").Include("Category").Include("Manufacturer").ToList();
                 result.ForEach(p => Products.Add(p));
             }
         }

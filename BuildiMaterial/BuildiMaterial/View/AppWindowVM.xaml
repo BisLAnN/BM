@@ -11,14 +11,58 @@
         MinHeight="250"
         WindowStartupLocation="CenterScreen"
         
-        Title="Список товаров" Height="450" Width="790">
+        Title="Список товаров" Height="450" Width="1000">
     <Grid>
-        <DataGrid  IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Products}" Grid.ColumnSpan="2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Добавить" Margin="10" Name="btnAdd" Click="btnAdd_Click" Background="#498c51"/>
+            <Button Content="Изменить" Margin="10" Name="btnRemove" Click="btnRemove_Click" Grid.Column="1" Background="#498c51"/>
+            <Button Content="Удалить" Margin="10" Name="btnDelete" Click="btnDelete_Click" Grid.Column="2" Background="#498c51"/>
+        </Grid>
+        <DataGrid Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding Products}" Grid.ColumnSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn
                     Header="Артикул"
                     Width="Auto"
                     Binding="{Binding Articul}"/>
+                
+                <DataGridTextColumn
+                    Header="Название"
+                    Width="Auto"
+                    Binding="{Binding Name}"/>
+
+                <DataGridTextColumn
+                    Header="Единица измерения"
+                    Width="Auto"
+                    Binding="{Binding Unit.Value}"/>
+
+                <DataGridTextColumn
+                    Header="Цена"
+                    Width="Auto"
+                    Binding="{Binding Cost}"/>
+
+                <DataGridTextColumn
+                    Header="Максимальная скидка"
+                    Width="Auto"
+                    Binding="{Binding MaxSaleSize}"/>
+
+                <DataGridTextColumn
+                    Header="Завод"
+                    Width="Auto"
+                    Binding="{Binding Manufacturer.ManufacturerName}"/>
+
+                <DataGridTextColumn
+                    Header="Поставщик"
+                    Width="Auto"
+                    Binding="{Binding Supplier.SupplierName}"/>
 
                 <DataGridTextColumn
                     Header="Категория"
@@ -26,39 +70,20 @@
                     Binding="{Binding Category.CategoryName}"/>
 
                 <DataGridTextColumn
-                    Header="Название"
-                    Width="Auto"
-                    Binding="{Binding Name}"/>
-
-                <DataGridTextColumn
-                    Header="Описаине"
-                    Width="Auto"
-                    Binding="{Binding Description}"/>
-                
-                <DataGridTextColumn
-                    Header="Цена"
-                    Width="Auto"
-                    Binding="{Binding Cost}"/>
-
-                <DataGridTextColumn
-                    Header="Единица измерения"
-                    Width="Auto"
-                    Binding="{Binding Unit.Value}"/>
-               
-                <DataGridTextColumn
-                    Header="Максимальная скидка"
-                    Width="Auto"
-                    Binding="{Binding MaxSaleSize}"/>
-
-                <DataGridTextColumn
                     Header="Действующая скидка"
                     Width="Auto"
                     Binding="{Binding CurrentDiscount}"/>
 
                 <DataGridTextColumn
-                    Header="Поставщик"
+                    Header="Количество на складе"
                     Width="Auto"
-                    Binding="{Binding Supplier.SupplierName}"/>
+                    Binding="{Binding AmountInStok}"/>
+
+                <DataGridTextColumn
+                    Header="Описаине"
+                    Width="Auto"
+                    Binding="{Binding Description}"/>
+
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

@@ -1,0 +1,17 @@
+﻿<Window x:Class="BuildiMaterial.View.AddOrRemoveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BuildiMaterial.View"
+        mc:Ignorable="d"
+        MinHeight="200"
+        MinWidth="200"
+        Icon="icon.ico"
+        FontFamily="Comic Sans MS"
+        WindowStartupLocation="CenterOwner"
+        Title="Добавить или изменить данные" Height="450" Width="800">
+    <Grid>
+        
+    </Grid>
+</Window>

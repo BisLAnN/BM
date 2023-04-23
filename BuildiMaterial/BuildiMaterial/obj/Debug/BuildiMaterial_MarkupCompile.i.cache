@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMaterial\App.xaml
-3773245074
+4398321379
 2-1531416940
-28-738762083
+29-1338576445
 191407171903
-View\AppWindowVM.xaml;View\CaptchaWindow.xaml;View\MainWindow.xaml;
+View\AddOrRemoveWindow.xaml;View\AppWindowVM.xaml;View\CaptchaWindow.xaml;View\MainWindow.xaml;
 
-True
+False
 

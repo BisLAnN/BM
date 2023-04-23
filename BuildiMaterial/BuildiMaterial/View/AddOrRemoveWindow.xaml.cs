@@ -1,5 +1,4 @@
-﻿using BuildiMaterial.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,27 +15,16 @@ using System.Windows.Shapes;
 namespace BuildiMaterial.View
 {
     /// <summary>
-    /// Логика взаимодействия для AppWindowVM.xaml
+    /// Логика взаимодействия для AddOrRemoveWindow.xaml
     /// </summary>
-    public partial class AppWindowVM : Window
+    public partial class AddOrRemoveWindow : Window
     {
-        public AppWindowVM()
+        public AddOrRemoveWindow()
         {
             InitializeComponent();
-            DataContext = new AppVM();
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnRemove_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        private void btnSave_Click(object sender, RoutedEventArgs e)
         {
 
         }
