@@ -22,6 +22,40 @@ namespace BuildiMaterial.ViewModel
             }
         }
 
+        private Product _selectedProduct;
+        public Product SelectedProduct
+        {
+            get { return _selectedProduct; }
+            set
+            {
+                _selectedProduct = value;
+                OnPropertyChanged(nameof(SelectedProduct));
+            }
+        }
+
+        private ObservableCollection<Unit> _unit;
+
+        public ObservableCollection<Unit> Unit
+        {
+            get { return _unit; }
+            set
+            {
+                _unit = value;
+                OnPropertyChanged(nameof(Unit));
+            }
+        }
+
+        private string _value;
+        public string Value
+        {
+            get => _value;
+            set
+            {
+                _value = value;
+                OnPropertyChanged(nameof(Value));
+            }
+        }
+
         public AppVM()
         {
             Initialize();
@@ -30,14 +64,14 @@ namespace BuildiMaterial.ViewModel
 
         private void Initialize()
         {
-            Products= new ObservableCollection<Product>();
+            Products = new ObservableCollection<Product>();
         }
 
-        private void LoadData()
+        public void LoadData()
         {
             using (var db = new BuildMateria1Entities())
             {
-                var result = db.Product.Include("Supplier").Include("Unit").Include("Category").ToList();
+                var result = db.Product.Include("Supplier").Include("Unit").Include("Category").Include("Manufacturer").ToList();
                 result.ForEach(p => Products.Add(p));
             }
         }

@@ -65,6 +65,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddOrRemoveWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AppWindowVM.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +145,9 @@
     <Compile Include="ViewModel\AppVM.cs" />
     <Compile Include="ViewModel\AuthorizationVM.cs" />
     <Compile Include="ViewModel\BaseVM.cs" />
+    <Compile Include="View\AddOrRemoveWindow.xaml.cs">
+      <DependentUpon>AddOrRemoveWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AppWindowVM.xaml.cs">
       <DependentUpon>AppWindowVM.xaml</DependentUpon>
     </Compile>
