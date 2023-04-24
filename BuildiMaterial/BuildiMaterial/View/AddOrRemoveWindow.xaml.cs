@@ -22,8 +22,6 @@ namespace BuildiMaterial.View
     /// </summary>
     public partial class AddOrRemoveWindow : Window
     {
-
-        Product _product;
         public AddOrRemoveWindow(Product product)
         {
             InitializeComponent();
@@ -31,20 +29,20 @@ namespace BuildiMaterial.View
             foreach (var item in App.Current.Windows)
             {
                 if (item is AppWindowVM)
-                    this.Owner = item as Window;
+                {
+                    this.Owner = (Window)item;
+                }
             }
 
             if (product is null)
             {
-                _product = product = new Product();
+                var newProduct = new Product();
             }
 
             else
             {
-                _product = product;
+                DataContext = product;
             }
-
-            this.DataContext = _product;
         }
 
 
@@ -52,11 +50,11 @@ namespace BuildiMaterial.View
         {
             using (var db = new BuildMateria1Entities())
             {
-                    db.Product.AddOrUpdate(_product);
+                    db.Product.AddOrUpdate((DataContext as Product));
                     db.SaveChanges();
                     ((Owner as AppWindowVM).DataContext as AppVM).LoadData();
                     MessageBox.Show("Данные успешно сохранены!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-                    this.Close();
+                    Close();
             }
         }
     }

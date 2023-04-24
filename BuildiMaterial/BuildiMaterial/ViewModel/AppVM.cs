@@ -69,6 +69,7 @@ namespace BuildiMaterial.ViewModel
 
         public void LoadData()
         {
+            Products.Clear();
             using (var db = new BuildMateria1Entities())
             {
                 var result = db.Product.Include("Supplier").Include("Unit").Include("Category").Include("Manufacturer").ToList();

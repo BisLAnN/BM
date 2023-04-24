@@ -46,6 +46,8 @@ namespace BuildiMaterial.View
                 var idForDelete = (DataContext as AppVM).SelectedProduct.ProductID;
                 var objectForDelete = db.Product.FirstOrDefault(x => x.ProductID == idForDelete);
                 db.Product.Remove(objectForDelete);
+                db.SaveChanges();
+                (DataContext as AppVM).LoadData();
             }
         }
     }
