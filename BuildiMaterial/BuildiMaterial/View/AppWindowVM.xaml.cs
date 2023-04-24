@@ -1,4 +1,5 @@
-﻿using BuildiMaterial.ViewModel;
+﻿using BuildiMaterial.Database;
+using BuildiMaterial.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,17 +29,24 @@ namespace BuildiMaterial.View
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            var addWindow = new AddOrRemoveWindow(null);
+            addWindow.Show();
         }
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-
+            var addWindow = new AddOrRemoveWindow((DataContext as AppVM).SelectedProduct);
+            addWindow.Show();
         }
 
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        public void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-
+            using (var db = new BuildMateria1Entities())
+            {
+                var idForDelete = (DataContext as AppVM).SelectedProduct.ProductID;
+                var objectForDelete = db.Product.FirstOrDefault(x => x.ProductID == idForDelete);
+                db.Product.Remove(objectForDelete);
+            }
         }
     }
 }
