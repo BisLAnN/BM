@@ -74,4 +74,3 @@ C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMate
 C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMaterial\obj\Debug\BuildiMaterial.pdb
 C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMaterial\obj\Debug\View\AddOrRemoveWindow.g.cs
 C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMaterial\obj\Debug\View\AddOrRemoveWindow.baml
-C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\BuildiMaterial\obj\Debug\BuildiMaterial.csproj.AssemblyReference.cache

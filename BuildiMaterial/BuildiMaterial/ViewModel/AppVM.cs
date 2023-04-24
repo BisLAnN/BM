@@ -33,29 +33,6 @@ namespace BuildiMaterial.ViewModel
             }
         }
 
-        private ObservableCollection<Unit> _unit;
-
-        public ObservableCollection<Unit> Unit
-        {
-            get { return _unit; }
-            set
-            {
-                _unit = value;
-                OnPropertyChanged(nameof(Unit));
-            }
-        }
-
-        private string _value;
-        public string Value
-        {
-            get => _value;
-            set
-            {
-                _value = value;
-                OnPropertyChanged(nameof(Value));
-            }
-        }
-
         public AppVM()
         {
             Initialize();
@@ -70,10 +47,11 @@ namespace BuildiMaterial.ViewModel
         public void LoadData()
         {
             Products.Clear();
+
             using (var db = new BuildMateria1Entities())
             {
-                var result = db.Product.Include("Supplier").Include("Unit").Include("Category").Include("Manufacturer").ToList();
-                result.ForEach(p => Products.Add(p));
+                var result = DBStorage.DB_s.Product.ToList();
+                result.ForEach(p => Products?.Add(p));
             }
         }
     }

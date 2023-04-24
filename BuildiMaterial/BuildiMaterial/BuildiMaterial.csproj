@@ -94,6 +94,7 @@
     <Compile Include="Database\Client.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\DBStorage.cs" />
     <Compile Include="Database\Image.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
