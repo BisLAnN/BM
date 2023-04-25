@@ -35,19 +35,26 @@ namespace BuildiMaterial.View
 
         private void btnRemove_Click(object sender, RoutedEventArgs e)
         {
-            var addWindow = new AddOrRemoveWindow((DataContext as AppVM).SelectedProduct);
+            var addWindow = new RemoveWindow((DataContext as AppVM).SelectedProduct);
             addWindow.Show();
         }
 
         public void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            using (var db = new BuildMateria1Entities())
+            try
             {
-                var idForDelete = (DataContext as AppVM).SelectedProduct.ProductID;
-                var objectForDelete = db.Product.FirstOrDefault(x => x.ProductID == idForDelete);
-                db.Product.Remove(objectForDelete);
-                db.SaveChanges();
-                (DataContext as AppVM).LoadData();
+                using (var db = new BuildMateria1Entities())
+                {
+                    var idForDelete = (DataContext as AppVM).SelectedProduct.ProductID;
+                    var objectForDelete = db.Product.FirstOrDefault(x => x.ProductID == idForDelete);
+                    db.Product.Remove(objectForDelete);
+                    db.SaveChanges();
+                    (DataContext as AppVM).LoadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка!"+ex.ToString());
             }
         }
     }

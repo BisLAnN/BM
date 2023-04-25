@@ -1,0 +1,6 @@
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\bin\Debug\Library.dll
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\bin\Debug\Library.pdb
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\obj\Debug\Library.csproj.CoreCompileInputs.cache
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\obj\Debug\Library.dll
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\obj\Debug\Library.pdb
+C:\Users\Фатима\Desktop\BuildingMaterials-master\BuildiMaterial\Library\obj\Debug\Library.csproj.AssemblyReference.cache

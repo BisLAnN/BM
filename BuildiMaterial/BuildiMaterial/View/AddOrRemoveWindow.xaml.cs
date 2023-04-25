@@ -22,10 +22,16 @@ namespace BuildiMaterial.View
     /// </summary>
     public partial class AddOrRemoveWindow : Window
     {
-        Product _product; 
+        Product _product;
         public AddOrRemoveWindow(Product product)
         {
             InitializeComponent();
+
+            cmbUnit.ItemsSource = DBStorage.DB_s.Unit.ToList();
+            cmbManufacturer.ItemsSource = DBStorage.DB_s.Manufacturer.ToList();
+            cmbSupplier.ItemsSource = DBStorage.DB_s.Supplier.ToList();
+            cmbCategory.ItemsSource = DBStorage.DB_s.Category.ToList();
+
             foreach (var item in App.Current.Windows)
             {
                 if (item is AppWindowVM)
@@ -41,19 +47,38 @@ namespace BuildiMaterial.View
             }
             this.DataContext = _product;
         }
+
         private void btnSave_Click(object sender, RoutedEventArgs e)
-        {
-            using (var db = new BuildMateria1Entities())
+        {   
+            if (cmbUnit.SelectedIndex == -1 || cmbSupplier.SelectedIndex == -1 || cmbCategory.SelectedIndex == -1 || cmbManufacturer.SelectedIndex == -1) MessageBox.Show("Выберите все данные!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
             {
                 try
                 {
-                    db.Product.AddOrUpdate(_product); db.SaveChanges();
-                    ((Owner as AppWindowVM).DataContext as AppVM).LoadData(); MessageBox.Show("Данные успешно сохранены!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
-                    Close();
+                    var currentUnit = cmbUnit.SelectedItem as Unit;
+                    _product.UnitID = currentUnit.UnitID;
+
+                    var currentManufacturer = cmbManufacturer.SelectedItem as Manufacturer;
+                    _product.ManufacturerID = currentManufacturer.ManufacturerID;
+
+                    var currentSupplier = cmbSupplier.SelectedItem as Supplier;
+                    _product.SupplierID = currentSupplier.SupplierID;
+
+                    var currentCategory = cmbCategory.SelectedItem as Category;
+                    _product.CategoryID = currentCategory.CategoryID;
+
+                
+                    using (var db = new BuildMateria1Entities())
+                    {
+                        db.Product.AddOrUpdate(_product); db.SaveChanges();
+                        ((Owner as AppWindowVM).DataContext as AppVM).LoadData(); MessageBox.Show("Данные успешно сохранены!", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
+                        Close();
+
+                    }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка!");
+                    MessageBox.Show("Ошибка!" + ex.ToString());
                 }
             }
         }

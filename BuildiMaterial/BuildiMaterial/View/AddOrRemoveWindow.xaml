@@ -10,7 +10,7 @@
         Icon="icon.ico"
         FontFamily="Comic Sans MS"
         WindowStartupLocation="CenterOwner"
-        Title="Добавить или изменить данные" Height="599" Width="400">
+        Title="Добавить или изменить данные" Height="610" Width="400">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -31,7 +31,7 @@
             <TextBox Text="{Binding Name}"/>
 
             <Label Content="Единица измерения:"/>
-            <TextBox Text="{Binding UnitID}"/>
+            <ComboBox x:Name="cmbUnit" DisplayMemberPath="Value"/>
 
             <Label Content="Цена:"/>
             <TextBox Text="{Binding Cost}"/>
@@ -40,13 +40,13 @@
             <TextBox Text="{Binding MaxSaleSize}"/>
 
             <Label Content="Завод:"/>
-            <TextBox Text="{Binding ManufacturerID}"/>
+            <ComboBox x:Name="cmbManufacturer" DisplayMemberPath="ManufacturerName"/>
             
             <Label Content="Поставщик:"/>
-            <TextBox Text="{Binding SupplierID}"/>
+            <ComboBox x:Name="cmbSupplier" DisplayMemberPath="SupplierName"/>
 
             <Label Content="Категория:"/>
-            <TextBox Text="{Binding CategoryID}"/>
+            <ComboBox x:Name="cmbCategory" DisplayMemberPath="CategoryName"/>
 
             <Label Content="Действующая скидка:"/>
             <TextBox Text="{Binding CurrentDiscount}"/>

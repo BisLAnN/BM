@@ -34,5 +34,16 @@
             <Button Grid.Column="2" x:Name="btnVerificate" Click="btnVerificate_Click" Content="Проверка" Background="#498c51" Margin="10" FontSize="16"/>
         </StackPanel>
 
+        <Label Content="----------------" Margin="40,50,40,90" Height="Auto" Width="Auto" HorizontalAlignment="Center" Background="Transparent" Foreground="Gray">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+
     </Grid>
 </Window>
