@@ -48,10 +48,17 @@ namespace BuildiMaterial.ViewModel
         {
             Products.Clear();
 
-            using (var db = new BuildMateria1Entities())
+            try
             {
-                var result = DBStorage.DB_s.Product.ToList();
-                result.ForEach(p => Products?.Add(p));
+                using (var db = new BuildMateria1Entities())
+                {
+                    var result = DBStorage.DB_s.Product.ToList();
+                    result.ForEach(p => Products?.Add(p));
+                }
+            }
+            catch (Exception)
+            {
+                
             }
         }
     }

@@ -36,8 +36,7 @@ namespace BuildiMaterial.ViewModel
         }
 
         private bool Authorizaton(string login, string password)
-        {
-
+        {       
             using (var db = new BuildMateria1Entities())
             {
                 var res = db.User.FirstOrDefault(user => user.UserLogin == login && user.UserPassword == password);
