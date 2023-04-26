@@ -34,7 +34,7 @@ namespace Library
                     }
                 }
 
-                if (!isBusy)
+                if (isBusy==false)
                 {
                     Array.Resize(ref availablePeriods, availablePeriods.Length + 1);
                     availablePeriods[availablePeriods.Length - 1] = current.ToString(@"HH\:mm") + "-" + end.ToString(@"HH\:mm");
